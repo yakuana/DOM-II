@@ -13,8 +13,10 @@ navigation.addEventListener("click", (event) => {
     event.preventDefault();
 })
 
+
 // List of images 
 const images = document.querySelectorAll("img"); 
+
 
 // First image [bus image], mouseover 
 images[0].addEventListener("mouseover", (event) => {
@@ -76,14 +78,39 @@ window.addEventListener("scroll", () => {
     }
 })
 
+// Window loaded, load
+window.addEventListener('load', () => {
+
+    // prints in console 
+    console.log('Welcome to the fun bus Website!');
+});
+
+
 // List of all h2 elements
 const header2 = document.querySelectorAll("h2"); 
 
-// Click on window to activate, then press any key, keydown 
+
+// Click on webpage to activate, then press any key, keydown 
 document.addEventListener("keydown", (event) => {
     
     // adds the letter to the end of the first h2 element in header2 
     header2[0].textContent += ` ${event.key}`;
 })
 
+
+// List of all p elements 
+const pElements = document.querySelectorAll("p"); 
+
+
+// Second p element, wheel 
+pElements[1].addEventListener("wheel", () => {
+
+    // increases the fontsize of second p element 
+    pElements[1].style.fontSize = "3rem"; 
+
+    // reverts the fontsize after 2 seconds 
+    setTimeout(function() {
+        pElements[1].style.fontSize = "1.5rem"; 
+    }, 2000); 
+})
 
